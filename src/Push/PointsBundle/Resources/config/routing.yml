@@ -1,0 +1,3 @@
+push_points_homepage:
+    pattern:  /
+    defaults: { _controller: PushPointsBundle:MainPage:points }

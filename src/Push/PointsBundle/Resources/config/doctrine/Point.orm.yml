@@ -1,0 +1,40 @@
+Push\PointsBundle\Entity\Point:
+    type: entity
+    table: null
+    repositoryClass: Push\PointsBundle\Entity\PointRepository
+    manyToOne:
+        image:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+        imageHd:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+    oneToMany:
+        checkins:
+            cascade: [all]
+            targetEntity: Checkin
+            mappedBy: point
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 255
+        latitude:
+            type: string
+            length: 16
+        longitude:
+            type: string
+            length: 16
+        radius:
+            type: float
+        startTime:
+            type: time
+        endTime:
+            type: time
+        allDay:
+            type: boolean
+        description:
+            type: text
+    lifecycleCallbacks: {  }

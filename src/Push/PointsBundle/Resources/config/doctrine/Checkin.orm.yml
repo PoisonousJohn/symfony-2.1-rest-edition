@@ -1,0 +1,28 @@
+Push\PointsBundle\Entity\Checkin:
+    type: entity
+    table: null
+    repositoryClass: Push\PointsBundle\Entity\CheckinRepository
+    manyToOne:
+      point:
+        targetEntity: Point
+        inversedBy: checkins
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        latitude:
+            type: string
+            length: '16'
+        longitude:
+            type: string
+            length: '16'
+        createdAt:
+            type: datetime
+        udid:
+            type: string
+            length: 255
+
+    lifecycleCallbacks:
+      prePersist: [prePersist]

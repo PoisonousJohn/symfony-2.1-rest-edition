@@ -1,0 +1,20 @@
+parameters:
+#    push_points.example.class: Push\PointsBundle\Example
+
+services:
+#    push_points.example:
+#        class: %push_points.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    push.point.admin:
+        id: mtools.point.admin
+        class: Push\PointsBundle\Admin\PointAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Точки, label: Точки }
+        arguments: [null, Push\PointsBundle\Entity\Point, PushPointsBundle:PointAdmin]
+    push.checkin.admin:
+        id: mtools.checkin.admin
+        class: Push\PointsBundle\Admin\CheckinAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Точки, label: Чекины }
+        arguments: [null, Push\PointsBundle\Entity\Checkin, SonataAdminBundle:CRUD]
+

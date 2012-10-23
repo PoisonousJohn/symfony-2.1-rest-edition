@@ -1,0 +1,5 @@
+{% for point in points %}
+    <h1>{{ point.name }}</h1>
+    <div class="thumb">{% media point.imageHd, 'medium' %}</div>
+    <div>{{ point.description }}</div>
+{% endfor %}

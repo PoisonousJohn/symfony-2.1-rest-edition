@@ -1,0 +1,5 @@
+{% if admin.isGranted('EDIT', object) and admin.hasRoute('copy')  %}
+{% spaceless %}
+       <a href="{{ admin.generateObjectUrl('copy', object) }}" title="Копировать"><img src="{{ asset('i/copy.png') }}" class="copyIcon" style="width: 25px;" alt="Копировать"/></a>
+{% endspaceless %}
+{% endif %}
